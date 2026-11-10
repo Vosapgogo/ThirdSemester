@@ -1,11 +1,16 @@
 package tutorials.annotations.model;
 
+import tutorials.annotations.json.JsonIgnore;
+import tutorials.annotations.json.JsonProperty;
+import tutorials.annotations.json.JsonSerializable;
 import tutorials.annotations.validation.NotBlank;
 import tutorials.annotations.validation.NotNull;
 import tutorials.annotations.validation.Range;
 
+@JsonSerializable
 public class User {
     @Range(min = 1)
+    @JsonProperty("userId")
     private final long id;
 
     @NotBlank
@@ -17,6 +22,7 @@ public class User {
     @Range(min=18, max=100)
     private int age;
 
+    @JsonIgnore
     private String password;
 
     public User(long id, String username, String email, int age, String password) {
