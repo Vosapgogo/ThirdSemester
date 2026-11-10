@@ -9,14 +9,14 @@ public class Main {
 
         System.out.println("Case 1: valid object");
         User validUser = new User(1, "JanKowalski", "jan.kowalski@example.com", 30, "superSecret123");
-        processor.process(validUser);
+        System.out.println(processor.process(validUser)+"\n");
 
         System.out.println("Case 2: validation error (blank username)");
         User invalidUserBlankName = new User(2, " ", "anna.nowak@example.com", 25, "password");
-        processor.process(invalidUserBlankName);
+        System.out.println(processor.process(invalidUserBlankName)+"\n");
 
         System.out.println("Case 3: validation error (age out of range)");
         User invalidUserAge = new User(3, "PiotrZielinski", "piotr.z@example.com", 16, "anotherPass");
-        processor.process(invalidUserAge);
+        System.out.println(processor.process(invalidUserAge)+"\n");
     }
 }
