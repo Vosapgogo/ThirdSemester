@@ -6,7 +6,11 @@ public class ObjectProcessor {
             System.out.println("Validation started...");
             Validator.validate(obj);
             System.out.println("Validation successful.");
-            return "";
+
+            String json = JsonSerializer.serialize(obj);
+            System.out.println("Serialization successful.");
+
+            return json;
 
         } catch (ValidationException e) {
             System.err.println("Validation error: " + e.getMessage());
